@@ -11,7 +11,7 @@ convertShortCodeToEmojiChar;
 
 
 convertShortCodeToEmojiHTML;
-//转换单个    smile ===> <img class='rebix-emoji'/>
+//转换单个    smile ===> `<img class='rebix-emoji'/>`
 
 
 replaceEmojiCharToShortCode;
@@ -19,4 +19,4 @@ replaceEmojiCharToShortCode;
 
 
 replaceShortCodeToEmojiHTML;
-//转换字符串  hello \:smile\: world ===> hello <div class="rebix-emoji"></div> world
+//转换字符串  hello \:smile\: world ===> hello `<div class="rebix-emoji"></div>` world
