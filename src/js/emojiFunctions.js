@@ -79,16 +79,26 @@ var RebixEmojiImpl = RebixEmojiImpl || {};
             return REPLACE_EMOJI_CHAR_REGEXP;
         }
 
+        var emojiDataSource = rootObject.dataSource;
+
         var unicodeArray = [];
-        for (var i in self.data) {
-            for (var j = 0; j < self.data[i][0].length; j++) {
-                unicodeArray.push(self.data[i][0][j].replace('*', '\\*'));
-                REPLACE_EMOJI_CHAR_TO_SHORT_CODE[self.data[i][0][j]] = i;
+        for (var i in emojiDataSource) {
+
+            if (emojiDataSource.hasOwnProperty(i)) {
+
+                var itemUnicodeArray = emojiDataSource[i][0];
+                for (var j = 0; j < itemUnicodeArray.length; j++) {
+                    unicodeArray.push(itemUnicodeArray[j].replace('*', '\\*'));
+                    REPLACE_EMOJI_CHAR_TO_SHORT_CODE[itemUnicodeArray[j]] = i;
+                }
+
             }
         }
+
         unicodeArray = unicodeArray.sort(function (a, b) {
             return b.length - a.length;
         });
+
         REPLACE_EMOJI_CHAR_REGEXP = new RegExp('(' + unicodeArray.join('|') + ')(\uD83C[\uDFFB-\uDFFF])?', "g");
         return REPLACE_EMOJI_CHAR_REGEXP;
     }
