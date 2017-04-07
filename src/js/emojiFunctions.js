@@ -104,6 +104,12 @@ var RebixEmojiImpl = RebixEmojiImpl || {};
     }
 
 
+    /**
+     * 转换一个字符串
+     * 形如 hello ^ world ===> hello :smile: world
+     * @param str
+     * @returns {*}
+     */
     function replaceEmojiCharToShortCode(str) {
 
         if (!str) {
@@ -125,6 +131,7 @@ var RebixEmojiImpl = RebixEmojiImpl || {};
 
     /**
      * 转换单个 shortCode 到 emoji字符
+     * 形如:  smile ===> ^
      * @param shortCode 例如: emoji
      * @returns
      */
@@ -155,6 +162,14 @@ var RebixEmojiImpl = RebixEmojiImpl || {};
     }
 
 
+    /**
+     * 转换单个字符.
+     * 形如: smile ===> <div ...></div>
+     * @param shortCode 不带冒号
+     * @param className
+     * @param isImg
+     * @returns {*}
+     */
     function convertShortCodeToEmojiHTML(shortCode, className, isImg) {
         var pos = getEmojiSpritePosition(shortCode);
         if (!pos) {
@@ -182,11 +197,11 @@ var RebixEmojiImpl = RebixEmojiImpl || {};
     }
 
 
-    rootObject.convertEmojiCharToShortCode = convertEmojiCharToShortCode;
-    rootObject.convertShortCodeToEmojiChar = convertShortCodeToEmojiChar;
-    rootObject.convertShortCodeToEmojiHTML = convertShortCodeToEmojiHTML;
-    rootObject.replaceEmojiCharToShortCode = replaceEmojiCharToShortCode;
-    rootObject.replaceShortCodeToEmojiHTML = replaceShortCodeToEmojiHTML;
+    rootObject.convertEmojiCharToShortCode = convertEmojiCharToShortCode;  //转换单个    ^ ===> smile
+    rootObject.convertShortCodeToEmojiChar = convertShortCodeToEmojiChar;  //转换单个    smile ===> ^
+    rootObject.convertShortCodeToEmojiHTML = convertShortCodeToEmojiHTML;  //转换单个    smile ===> <img class='rebix-emoji'/>
+    rootObject.replaceEmojiCharToShortCode = replaceEmojiCharToShortCode;  //转换字符串  hello ^ world ===> hello :smile: world
+    rootObject.replaceShortCodeToEmojiHTML = replaceShortCodeToEmojiHTML;  //转换字符串  hello :smile: world ===> hello <div class="rebix-emoji"></div> world
 
 
 })(RebixEmojiImpl);
