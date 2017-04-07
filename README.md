@@ -2,12 +2,21 @@
 
 ##functions
 
-convertEmojiCharToShortCode;  //转换单个    ^ ===> smile
+convertEmojiCharToShortCode;
+//转换单个    :smile: ===> smile
 
-convertShortCodeToEmojiChar;  //转换单个    smile ===> ^
 
-convertShortCodeToEmojiHTML;  //转换单个    smile ===> <img class='rebix-emoji'/>
+convertShortCodeToEmojiChar;
+//转换单个    smile ===> :smile:
 
-replaceEmojiCharToShortCode;  //转换字符串  hello ^ world ===> hello :smile: world
 
-replaceShortCodeToEmojiHTML;  //转换字符串  hello :smile: world ===> hello <div class="rebix-emoji"></div> world
+convertShortCodeToEmojiHTML;
+//转换单个    smile ===> <img class='rebix-emoji'/>
+
+
+replaceEmojiCharToShortCode;
+//转换字符串  hello :smile: world ===> hello \:smile\: world
+
+
+replaceShortCodeToEmojiHTML;
+//转换字符串  hello \:smile\: world ===> hello <div class="rebix-emoji"></div> world
