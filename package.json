@@ -1,0 +1,25 @@
+{
+  "name": "rebix-emoji",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/rebix-emoji-group.js",
+  "scripts": {
+    "build": "rm -rf dist/ && gulp && rm -rf dist/tmp && cp -R src/css dist/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanhaipeng/rebix-emoji.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luanhaipeng/rebix-emoji/issues"
+  },
+  "homepage": "https://github.com/luanhaipeng/rebix-emoji#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  }
+}
