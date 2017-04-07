@@ -174,6 +174,7 @@ var RebixEmojiImpl = RebixEmojiImpl || {};
 
     rootObject.convertEmojiCharToShortCode = convertEmojiCharToShortCode;
     rootObject.convertShortCodeToEmojiChar = convertShortCodeToEmojiChar;
+    rootObject.convertShortCodeToEmojiHTML = convertShortCodeToEmojiHTML;
     rootObject.replaceEmojiCharToShortCode = replaceEmojiCharToShortCode;
     rootObject.replaceShortCodeToEmojiHTML = replaceShortCodeToEmojiHTML;
 
