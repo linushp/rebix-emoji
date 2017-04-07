@@ -1,6 +1,6 @@
 # rebix-emoji
 
-##functions
+## functions
 
 convertEmojiCharToShortCode;
 //转换单个    :smile: ===> smile
